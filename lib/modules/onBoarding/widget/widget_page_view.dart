@@ -4,8 +4,8 @@ import 'page_view_item.dart';
 
 
 class WidgetPageView extends StatelessWidget {
-  const WidgetPageView({Key? key,@required this.pageController}) : super(key: key);
-  final PageController? pageController;
+  const WidgetPageView({Key? key,required this.pageController}) : super(key: key);
+  final PageController pageController;
   @override
   Widget build(BuildContext context) {
     return PageView(

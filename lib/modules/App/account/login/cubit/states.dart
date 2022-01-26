@@ -1,22 +1,22 @@
 
 
-abstract class ShopLoginStates {}
+abstract class CllubLoginStates {}
 
-class ShopLoginInitialState extends ShopLoginStates {}
+class CllubLoginInitialState extends CllubLoginStates {}
 
-class ShopLoginLoadingState extends ShopLoginStates {}
+class CllubLoginLoadingState extends CllubLoginStates {}
 
-class ShopLoginSuccessState extends ShopLoginStates {
- // final ShopLoginModel loginModel;
+class CllubLoginSuccessState extends CllubLoginStates {
+ // final CllubLoginModel loginModel;
 
-//  ShopLoginSuccessState(this.loginModel);
+//  CllubLoginSuccessState(this.loginModel);
 }
 
-class ShopLoginErrorState extends ShopLoginStates
+class CllubLoginErrorState extends CllubLoginStates
 {
   final String error;
 
-  ShopLoginErrorState(this.error);
+  CllubLoginErrorState(this.error);
 }
 
-class ShopChangePasswordVisibilityState extends ShopLoginStates {}
+class CllubChangePasswordVisibilityState extends CllubLoginStates {}

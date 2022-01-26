@@ -54,7 +54,7 @@ Widget dropButton({
 Widget defaultFormField({
   required TextEditingController? controller,
   required TextInputType? type,
-  required Function? validate,
+  required String? Function(String?)? validation,
   bool isPassword = false,
   required String? label,
   required IconData? prefix,
@@ -65,9 +65,7 @@ Widget defaultFormField({
       controller: controller,
       keyboardType: type,
       obscureText: isPassword,
-      validator:(v){
-        validate!(v);
-      },
+      validator:validation,
       style: TextStyle(color: Colors.white),
       decoration: InputDecoration(
         prefixIcon: Icon(
@@ -164,9 +162,27 @@ Widget? buttomSheetFollow(context) {
   }
   );
 }
+void navigateTo(context, widget) => Navigator.push(
+  context,
+  MaterialPageRoute(
+    builder: (context) => widget,
+  ),
+);
+void navigateAndFinish(context, widget) => Navigator.pushAndRemoveUntil(
+  context,
+  MaterialPageRoute(
+    builder: (context) => widget,
+  ),
+      (Route<dynamic> route) => false,
+);
 
-
-
+Widget buildSeparator() => Container(
+  height: 1.0,
+  width: double.infinity,
+  color: Colors.grey[300],
+);
+//
+//
 // void showToast() =>
 //     Fluttertoast.showToast(
 //     msg: 'Connection request sent',
@@ -184,16 +200,16 @@ Widget? buttomSheetFollow(context) {
 //   // gravity: ToastGravity.BOTTOM,
 //   fontSize: 12,
 // );
-
-// ListTile(
-// leading: Icon(Icons.account_circle, size: 50),
-// title: Text('Title Text'),
-// subtitle: Text('Secondary Text'),
-// ),
-// Icon(Ionicons.ios_trash_sharp),
-// Icon(FontAwesome.glass),
-// Icon(MaterialIcons.forward),
-// Icon(MaterialIcons.),
-// // Icon(FontAwesome5.address_book),
-// Icon(FontAwesome5Solid.address_book),
-
+//
+// // ListTile(
+// // leading: Icon(Icons.account_circle, size: 50),
+// // title: Text('Title Text'),
+// // subtitle: Text('Secondary Text'),
+// // ),
+// // Icon(Ionicons.ios_trash_sharp),
+// // Icon(FontAwesome.glass),
+// // Icon(MaterialIcons.forward),
+// // Icon(MaterialIcons.),
+// // // Icon(FontAwesome5.address_book),
+// // Icon(FontAwesome5Solid.address_book),
+//

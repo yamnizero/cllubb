@@ -1,6 +1,6 @@
 
 import 'package:cllubb/shared/colors/colors.dart';
-import 'package:cllubb/shared/components/at_world_comm/componets.dart';
+import 'package:cllubb/shared/colors/compon.dart';
 import 'package:cllubb/shared/components/space_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -52,9 +52,9 @@ class _SignUpViewState extends State<SignUpView> {
                         label: 'Email',
                         prefix: Icons.email,
                         type: TextInputType.emailAddress,
-                        validate: (String value)
+                        validation: ( value)
                         {
-                          if(value.isEmpty)
+                          if(value!.isEmpty)
                           {
                             return 'email must not be empt';
                           }
@@ -75,9 +75,9 @@ class _SignUpViewState extends State<SignUpView> {
                           });
                         },
                         type: TextInputType.visiblePassword,
-                        validate: (String value)
+                        validation: ( value)
                         {
-                          if(value.isEmpty)
+                          if(value!.isEmpty)
                           {
                             return 'password is too short ';
                           }
@@ -98,9 +98,9 @@ class _SignUpViewState extends State<SignUpView> {
                           });
                         },
                         type: TextInputType.visiblePassword,
-                        validate: (String value)
+                        validation: ( value)
                         {
-                          if(value.isEmpty)
+                          if(value!.isEmpty)
                           {
                             return 'password is too short ';
                           }
@@ -113,9 +113,9 @@ class _SignUpViewState extends State<SignUpView> {
                         label: 'First Name',
                         prefix: Icons.email,
                         type: TextInputType.emailAddress,
-                        validate: (String value)
+                        validation: ( value)
                         {
-                          if(value.isEmpty)
+                          if(value!.isEmpty)
                           {
                             return 'First Name must not be empt';
                           }
@@ -128,9 +128,9 @@ class _SignUpViewState extends State<SignUpView> {
                         label: 'Last Name',
                         prefix: Icons.email,
                         type: TextInputType.emailAddress,
-                        validate: (String value)
+                        validation: ( value)
                         {
-                          if(value.isEmpty)
+                          if(value!.isEmpty)
                           {
                             return 'Last Name must not be empt';
                           }
@@ -143,9 +143,9 @@ class _SignUpViewState extends State<SignUpView> {
                         label: 'Enter nickname',
                         prefix: Icons.email,
                         type: TextInputType.emailAddress,
-                        validate: (String value)
+                        validation: ( value)
                         {
-                          if(value.isEmpty)
+                          if(value!.isEmpty)
                           {
                             return 'Enter nickname must not be empt';
                           }
@@ -158,7 +158,7 @@ class _SignUpViewState extends State<SignUpView> {
               const VerticalSpace(3),
               Padding(
                 padding: kDefaultPadding,
-                child:  defaultButton(
+                child: defaultButton(
                   text: 'create account',
                   background: kClub,
                   function: ()

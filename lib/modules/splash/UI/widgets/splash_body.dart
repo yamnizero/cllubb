@@ -60,7 +60,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
    {
      Future.delayed(const Duration(seconds: 3),()
      {
-       Get.to(()=> const OnBoardingView(),transition: Transition.fade);
+       Get.to(()=> const OnBoardScreen(),transition: Transition.fade);
      });
    }
 }

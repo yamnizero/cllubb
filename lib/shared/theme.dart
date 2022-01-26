@@ -38,7 +38,7 @@ ThemeData lightTheme = ThemeData(
             color: Colors.black
         )
     ),
-    fontFamily: 'Jannah'
+    fontFamily: 'assets/fonts/Poppins-Regular.ttf'
 );
 ThemeData darkTheme = ThemeData(
     primarySwatch: defaultColor,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'size_config.dart';
 
 class HorizontalSpace extends StatelessWidget {
-   const HorizontalSpace(this.value);
+    const HorizontalSpace(this.value);
   final double? value;
 
   @override
