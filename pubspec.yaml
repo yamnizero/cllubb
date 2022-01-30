@@ -40,6 +40,7 @@ dependencies:
   hexcolor:
   dots_indicator: ^2.0.0
   percent_indicator:
+  fluttertoast: ^8.0.8
   get:
   font_awesome_flutter: ^9.2.0
   flutter_vector_icons:

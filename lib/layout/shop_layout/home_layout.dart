@@ -18,7 +18,7 @@ class HomeLayout extends StatelessWidget {
         var cubit = CllubbCubit.get(context);
         return Scaffold(
           appBar: AppBar(
-            //elevation: 1.5,
+            elevation: 1.5,
             title: Center(
               child: Image.asset(
                 'assets/images/atworld.png',

@@ -1,15 +1,11 @@
-import 'package:cllubb/model/My_Progress/my_progress.dart';
+
 import 'package:cllubb/modules/App/home/widgets_home/listview_activity.dart';
 import 'package:cllubb/modules/App/home/widgets_home/listview_courses.dart';
 import 'package:cllubb/modules/App/home/widgets_home/listview_forums.dart';
 import 'package:cllubb/modules/App/home/widgets_home/listview_groups.dart';
 import 'package:cllubb/shared/colors/colors.dart';
-import 'package:cllubb/shared/components/compones.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import 'widgets_home/listview_memeber.dart';
-import '../../../model/members/user_form_members.dart';
 import 'widgets_home/listview_myprogress.dart';
 import 'widgets_home/listview_notification.dart';
 import 'widgets_home/widget_header.dart';

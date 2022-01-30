@@ -50,6 +50,11 @@ ThemeData lightTheme = ThemeData(
           fontWeight: FontWeight.bold,
           color: Colors.grey
       ),
+      subtitle2: TextStyle(
+          fontSize: 12.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.grey
+      ),
     ),
     iconTheme: const IconThemeData(
         color: Colors.black
@@ -61,6 +66,16 @@ ThemeData lightTheme = ThemeData(
     cardTheme: const CardTheme(
       color: Colors.white,
       shadowColor: Colors.black,
+    ),
+    textButtonTheme:  TextButtonThemeData(
+      style: TextButton.styleFrom(
+        backgroundColor: Colors.white,
+        primary: Colors.white
+      ),
+    ),
+    backgroundColor: Colors.grey,
+    bottomSheetTheme: const BottomSheetThemeData(
+      backgroundColor: Colors.white
     ),
     fontFamily: 'assets/fonts/Poppins-Regular.ttf'
 );
@@ -112,6 +127,11 @@ ThemeData darkTheme = ThemeData(
             fontWeight: FontWeight.bold,
             color: Colors.grey
         ),
+      subtitle2: TextStyle(
+          fontSize: 12.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.white
+      ),
 
     ),
     iconTheme: const IconThemeData(
@@ -124,6 +144,16 @@ ThemeData darkTheme = ThemeData(
     cardTheme: const CardTheme(
       color: Colors.grey,
       shadowColor: Colors.black,
+    ),
+    textButtonTheme:  TextButtonThemeData(
+      style: TextButton.styleFrom(
+        backgroundColor: Colors.grey,
+        primary: Colors.grey,
+      ),
+    ),
+    backgroundColor: Colors.white,
+    bottomSheetTheme: const BottomSheetThemeData(
+        backgroundColor: Colors.grey
     ),
     fontFamily: 'assets/fonts/Poppins-Regular.ttf'
 );

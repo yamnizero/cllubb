@@ -9,8 +9,8 @@ class UserFormMembersModel {
 
 
 class UserFormMembers extends StatelessWidget {
-  final void Function()? onTap;
-  const UserFormMembers({Key? key,this.onTap}) : super(key: key);
+  final GestureTapCallback onTap;
+  const UserFormMembers({Key? key,required this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
