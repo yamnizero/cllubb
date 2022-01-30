@@ -21,13 +21,13 @@ class CllubLoginCubit extends Cubit<CllubLoginStates>
     emit(CllubLoginLoadingState());
 
     DioHelper.postData(
-        url: LOGIN,
+        url: 'logIn.php',
         data: {
           'mLmail':email,
           'mLpassword':password,
         },
     ).then((value) {
-      print(value.data);
+      print(value.data['message']);
       //loginModel = CllubLoginModel.fromJson(value.data);
       // emit(CllubLoginSuccessState(loginModel));
       emit(CllubLoginSuccessState());

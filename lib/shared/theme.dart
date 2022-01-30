@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
-
 import 'colors/colors.dart';
 
 ThemeData lightTheme = ThemeData(
@@ -26,20 +25,46 @@ ThemeData lightTheme = ThemeData(
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       type: BottomNavigationBarType.fixed,
-      selectedItemColor: defaultColor,
+      selectedItemColor: kClub,
       unselectedItemColor: Colors.grey,
       elevation: 20.0,
       backgroundColor: Colors.white,
     ),
     textTheme: const TextTheme(
-        bodyText1: TextStyle(
-            fontSize: 18.0,
+      headline6: TextStyle(
+          fontSize: 18.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.black
+      ),
+      bodyText1: TextStyle(
+            fontSize: 14.0,
             fontWeight: FontWeight.bold,
             color: Colors.black
-        )
+        ),
+      bodyText2: TextStyle(
+          fontSize: 13.0,
+          color: Colors.black
+      ),
+      caption: TextStyle(
+          fontSize: 12.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.grey
+      ),
+    ),
+    iconTheme: const IconThemeData(
+        color: Colors.black
+    ),
+    dividerTheme: const DividerThemeData(
+      color: Colors.black,
+      thickness: .9,
+    ),
+    cardTheme: const CardTheme(
+      color: Colors.white,
+      shadowColor: Colors.black,
     ),
     fontFamily: 'assets/fonts/Poppins-Regular.ttf'
 );
+//-----------------------------------------------------------------------
 ThemeData darkTheme = ThemeData(
     primarySwatch: defaultColor,
     scaffoldBackgroundColor: HexColor('333739'),
@@ -67,23 +92,42 @@ ThemeData darkTheme = ThemeData(
       elevation: 20.0,
     ),
     textTheme: const TextTheme(
+        //header Category
+        headline6: TextStyle(
+          fontSize: 18.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.white
+      ),
         bodyText1: TextStyle(
-            fontSize: 18.0,
+            fontSize: 14.0,
             fontWeight: FontWeight.bold,
             color: Colors.white
-        )
-    ),
-  fontFamily: 'Jannah'
-);
+        ),
+        bodyText2: TextStyle(
+            fontSize: 13.0,
+            color: Colors.white
+        ),
+        caption: TextStyle(
+            fontSize: 12.0,
+            fontWeight: FontWeight.bold,
+            color: Colors.grey
+        ),
 
-// themeMode: ThemeMode.dark,
-//
-//
-// bool isDark = false;
-//
-// void changeAppMode()
-// {
-//   isDark = !isDark;
-//   emit()
-// }
+    ),
+    iconTheme: const IconThemeData(
+      color: Colors.white
+    ),
+    dividerTheme: const DividerThemeData(
+      color: Colors.white,
+      thickness: .9,
+    ),
+    cardTheme: const CardTheme(
+      color: Colors.grey,
+      shadowColor: Colors.black,
+    ),
+    fontFamily: 'assets/fonts/Poppins-Regular.ttf'
+);
+//-----------------------------------------------------------------------
+
+
 

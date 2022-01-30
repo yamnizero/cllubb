@@ -2,11 +2,12 @@ import 'package:cllubb/modules/App/account/login/cubit/states.dart';
 import 'package:cllubb/modules/App/account/signUp/sign_view.dart';
 import 'package:cllubb/shared/colors/colors.dart';
 import 'package:cllubb/shared/colors/compon.dart';
-import 'package:cllubb/shared/components/space_widget.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'cubit/cubit.dart';
 
 
@@ -50,6 +51,7 @@ class LoginView extends StatelessWidget {
                             label: 'Email',
                             prefix: Icons.email,
                             type: TextInputType.emailAddress,
+
                             validation: (value)
                             {
                               if(value!.isEmpty)
@@ -58,13 +60,6 @@ class LoginView extends StatelessWidget {
                                 }
 
                             }
-                            //     (String value)
-                            // {
-                            //   if(value!.isEmpty)
-                            //   {
-                            //     return 'email must not be empt';
-                            //   }
-                            // }
                         ),
                          SizedBox(
                           height: MediaQuery.of(context).size.height * .04,
@@ -73,14 +68,25 @@ class LoginView extends StatelessWidget {
                             controller: password,
                             label: 'Password',
                             prefix: Icons.lock,
-                            suffix: isPassword ? Icons.visibility : Icons.visibility_off,
-                            isPassword: isPassword,
+                            suffix: CllubLoginCubit.get(context).suffix ,
+                            isPassword: CllubLoginCubit.get(context).isPassword,
+                            onSubmit :(value)
+                            {
+                              if(formKey.currentState!.validate())
+                              {
+                                CllubLoginCubit.get(context).userLogin(
+                                    email: email.text,
+                                    password: password.text
+                                );
+                                print(email.text);
+                                print(password.text);
+                              }
+                            },
                             suffixPressed: ()
                             {
-                              // setState(() {
-                              //   isPassword =!isPassword;
-                              // });
+                              CllubLoginCubit.get(context).changePasswordVisibility();
                             },
+
                             type: TextInputType.visiblePassword,
                             validation: ( value)
                             {
@@ -151,14 +157,11 @@ class LoginView extends StatelessWidget {
                                   fontSize: 18,
                                   fontWeight: FontWeight.w700),
                             ),
-                            const Spacer(),
+                            Spacer(),
                             GestureDetector(
                               onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => SignUpView(),
-                                  ),
+                                Get.to(()=> const SignUpView(),
+                                    duration: const Duration(milliseconds: 500),
                                 );
                               },
                               child: const Text(

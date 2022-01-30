@@ -24,3 +24,11 @@ class VerticalSpace extends StatelessWidget {
     );
   }
 }
+Widget VSpace(
+    {required double value}
+    )
+{
+  return SizedBox(
+    height: SizeConfig.defaultSize! * value,
+  );
+}

@@ -6,6 +6,8 @@ class ShopInitialState extends CllubbStates {}
 
 class ShopChangeBottomNavState extends CllubbStates{}
 
+class ShopChangeModeState extends CllubbStates{}
+
 
 class ShopLoadingHomeDataState extends CllubbStates{}
 

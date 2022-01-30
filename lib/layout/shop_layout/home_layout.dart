@@ -18,7 +18,22 @@ class HomeLayout extends StatelessWidget {
         var cubit = CllubbCubit.get(context);
         return Scaffold(
           appBar: AppBar(
-            title: const Text('Clluub'),
+            //elevation: 1.5,
+            title: Center(
+              child: Image.asset(
+                'assets/images/atworld.png',
+                height: 32,
+              ),
+            ),
+            actions: [
+              IconButton(
+                  icon: const Icon(Icons.brightness_4_outlined),
+                onPressed: ()
+                {
+                  CllubbCubit.get(context).changeAppMode();
+                },
+              )
+            ],
           ),
           body: cubit.bottomScreen[cubit.currentIndex],
           bottomNavigationBar: BottomNavigationBar(

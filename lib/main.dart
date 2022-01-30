@@ -5,6 +5,7 @@ import 'package:cllubb/shared/remote/dio_helper.dart';
 import 'package:cllubb/shared/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'layout/shop_layout/cubit/cubit.dart';
 import 'layout/shop_layout/home_layout.dart';
 import 'modules/App/account/login/login_view.dart';
@@ -19,10 +20,10 @@ void main() async {
   await CacheHelper.init();
 
   Widget widget;
-  //bool isDark = CacheHelper.getData(key: 'isDark');
+  bool isDark = CacheHelper.getData(key: 'isDark');
   bool? onBoarding = CacheHelper.getData(key: 'onBoarding');
   String? token = CacheHelper.getData(key: 'token');
-  print(token);
+  print("here=>>>>>>>>>$token");
 
   if(onBoarding != null)
   {
@@ -40,7 +41,9 @@ void main() async {
         () {
       runApp(
 
-          MyApp(startWidget: widget,
+          MyApp(
+            startWidget: widget,
+            isDark: isDark,
       )
       );
     },
@@ -51,26 +54,29 @@ void main() async {
 
 
 class MyApp extends StatelessWidget {
-  //final bool isDark;
+  final bool? isDark;
   final Widget startWidget;
-  MyApp({Key? key,required this.startWidget}) : super(key: key);
+  MyApp({Key? key,required this.startWidget, this.isDark}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
 
     return BlocProvider(
-      create: (BuildContext context) => CllubbCubit(),
+      create: (BuildContext context) => CllubbCubit()
+        ..changeAppMode(
+          modeDark: isDark!,
+        ),
 
       child: BlocConsumer<CllubbCubit,CllubbStates> (
         listener: (context,state){},
         builder: (context,state){
-          return  MaterialApp(
+          return  GetMaterialApp(
             debugShowCheckedModeBanner: false,
-
-            // theme:lightTheme,
-            //darkTheme: darkTheme,
-            home: startWidget,
+            theme:lightTheme,
+            darkTheme: darkTheme,
+            themeMode: CllubbCubit.get(context).isDark ? ThemeMode.dark : ThemeMode.light,
+            home: const HomeLayout(),
           );
 
         },

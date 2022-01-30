@@ -60,11 +60,16 @@ Widget defaultFormField({
   required IconData? prefix,
   IconData? suffix,
   Function()? suffixPressed,
+  Function(String)? onSubmit,
 }) =>
     TextFormField(
       controller: controller,
       keyboardType: type,
       obscureText: isPassword,
+      onFieldSubmitted: (s)
+      {
+        onSubmit!(s);
+      },
       validator:validation,
       style: TextStyle(color: Colors.white),
       decoration: InputDecoration(
