@@ -87,7 +87,7 @@ Widget? buttonSheetFollow(context) {
     );
   }
   );
-}
+}String token = '';
 
 
 void showToast({

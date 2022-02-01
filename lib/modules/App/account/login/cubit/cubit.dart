@@ -1,24 +1,24 @@
 
+import 'package:cllubb/model/login/login_model.dart';
 import 'package:cllubb/modules/App/account/login/cubit/states.dart';
-import 'package:cllubb/shared/end_points.dart';
 import 'package:cllubb/shared/remote/dio_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 
-class CllubLoginCubit extends Cubit<CllubLoginStates>
+class ClubLoginCubit extends Cubit<ClubLoginStates>
 {
-  CllubLoginCubit() : super(CllubLoginInitialState());
+  ClubLoginCubit() : super(ClubLoginInitialState());
 
-  static CllubLoginCubit get(context) => BlocProvider.of(context);
-  //late CllubLoginModel loginModel;
+  static ClubLoginCubit get(context) => BlocProvider.of(context);
+  late ClubLoginModel loginModel;
 
   void userLogin({
   required String email,
   required String password,
 }) {
 
-    emit(CllubLoginLoadingState());
+    emit(ClubLoginLoadingState());
 
     DioHelper.postData(
         url: 'logIn.php',
@@ -27,12 +27,12 @@ class CllubLoginCubit extends Cubit<CllubLoginStates>
           'mLpassword':password,
         },
     ).then((value) {
-      print(value.data['message']);
-      //loginModel = CllubLoginModel.fromJson(value.data);
-      // emit(CllubLoginSuccessState(loginModel));
-      emit(CllubLoginSuccessState());
+      print(value.data);
+      loginModel = ClubLoginModel.fromJson(value.data);
+      emit(ClubLoginSuccessState(loginModel));
+      // emit(ClubLoginSuccessState());
     }).catchError((error){
-      emit(CllubLoginErrorState(error.toString()));
+      emit(ClubLoginErrorState(error.toString()));
     });
   }
 
@@ -42,7 +42,7 @@ class CllubLoginCubit extends Cubit<CllubLoginStates>
   void changePasswordVisibility(){
     isPassword = !isPassword;
     suffix = isPassword ? Icons.visibility_outlined :Icons.visibility_off_outlined;
-    emit(CllubChangePasswordVisibilityState());
+    emit(ClubChangePasswordVisibilityState());
 
   }
 

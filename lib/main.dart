@@ -20,7 +20,7 @@ void main() async {
   await CacheHelper.init();
 
   Widget widget;
-  bool isDark = CacheHelper.getData(key: 'isDark');
+  bool? isDark = CacheHelper.getData(key: 'isDark');
   bool? onBoarding = CacheHelper.getData(key: 'onBoarding');
   String? token = CacheHelper.getData(key: 'token');
   print("here=>>>>>>>>>$token");
@@ -43,7 +43,7 @@ void main() async {
 
           MyApp(
             startWidget: widget,
-            isDark: isDark,
+            isDark: isDark!,
       )
       );
     },
@@ -56,7 +56,9 @@ void main() async {
 class MyApp extends StatelessWidget {
   final bool? isDark;
   final Widget startWidget;
-  MyApp({Key? key,required this.startWidget, this.isDark}) : super(key: key);
+  MyApp({Key? key,required this.startWidget,
+    this.isDark
+  }) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -65,7 +67,7 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (BuildContext context) => CllubbCubit()
         ..changeAppMode(
-          modeDark: isDark!,
+         modeDark: isDark,
         ),
 
       child: BlocConsumer<CllubbCubit,CllubbStates> (
@@ -74,9 +76,9 @@ class MyApp extends StatelessWidget {
           return  GetMaterialApp(
             debugShowCheckedModeBanner: false,
             theme:lightTheme,
-            darkTheme: darkTheme,
+           darkTheme: darkTheme,
             themeMode: CllubbCubit.get(context).isDark ? ThemeMode.dark : ThemeMode.light,
-            home: const HomeLayout(),
+            home:HomeLayout(),
           );
 
         },

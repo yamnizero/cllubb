@@ -7,7 +7,7 @@ class DioHelper{
   static init(){
     dio = Dio(
       BaseOptions(
-        baseUrl: 'https://cllubb.com/yamani/libs/usersLibs/',
+        baseUrl: 'https://cllubb.com/Property/club/libs/usersLibs/',
         receiveDataWhenStatusError: true,
       ),
     );
@@ -17,12 +17,12 @@ class DioHelper{
   static Future<Response> getData({
     required String url,
     Map<String,dynamic>? query,
-    String lang ='en',
+    // String lang ='en',
     String? token ,
   }) async {
     dio.options.headers = {
       'Content-Type' :'application/json',
-      'lang': lang,
+      // 'lang': lang,
       'Authorization': token,
     };
     return await dio.get(
@@ -35,13 +35,13 @@ class DioHelper{
     required String url,
     Map<String,dynamic>? query,
     required Map<String,dynamic> data,
-    String lang ='en',
+    // String lang ='en',
     String? token ,
 }) async
   {
     dio.options.headers = {
       'Content-Type' :'application/json',
-      'lang': lang,
+      // 'lang': lang,
       'Authorization': token,
     };
     return dio.post(
@@ -55,13 +55,13 @@ class DioHelper{
     required String url,
     Map<String,dynamic>? query,
     required Map<String,dynamic> data,
-    String lang ='en',
+    // String lang ='en',
     String? token ,
   }) async
   {
     dio.options.headers = {
       'Content-Type' :'application/json',
-      'lang': lang,
+      // 'lang': lang,
       'Authorization': token,
     };
     return dio.put(

@@ -1,22 +1,24 @@
 
 
-abstract class CllubLoginStates {}
+import 'package:cllubb/model/login/login_model.dart';
 
-class CllubLoginInitialState extends CllubLoginStates {}
+abstract class ClubLoginStates {}
 
-class CllubLoginLoadingState extends CllubLoginStates {}
+class ClubLoginInitialState extends ClubLoginStates {}
 
-class CllubLoginSuccessState extends CllubLoginStates {
- // final CllubLoginModel loginModel;
+class ClubLoginLoadingState extends ClubLoginStates {}
 
-//  CllubLoginSuccessState(this.loginModel);
+class ClubLoginSuccessState extends ClubLoginStates {
+ final ClubLoginModel loginModel;
+
+ ClubLoginSuccessState(this.loginModel);
 }
 
-class CllubLoginErrorState extends CllubLoginStates
+class ClubLoginErrorState extends ClubLoginStates
 {
   final String error;
 
-  CllubLoginErrorState(this.error);
+  ClubLoginErrorState(this.error);
 }
 
-class CllubChangePasswordVisibilityState extends CllubLoginStates {}
+class ClubChangePasswordVisibilityState extends ClubLoginStates {}

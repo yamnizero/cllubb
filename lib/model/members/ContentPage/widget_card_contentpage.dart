@@ -35,9 +35,18 @@ class _WidgetCardContentsState extends State<WidgetCardContents> {
                         height: innerHeight * 0.72,
                         width: innerWidth,
                         decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset: const Offset(0, 1), // changes position of shadow
+                            ),
+                          ],
                           borderRadius: BorderRadius.circular(30),
                           color: Theme.of(context).cardTheme.color,
                         ),
+
                         child: Column(
                           children:  [
                              const  SizedBox(
