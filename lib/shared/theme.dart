@@ -55,6 +55,13 @@ ThemeData lightTheme = ThemeData(
           fontWeight: FontWeight.bold,
           color: Colors.grey
       ),
+      headline1: TextStyle(
+          fontSize: 12.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.grey
+      ),
+
+
     ),
     iconTheme: const IconThemeData(
         color: Colors.black
@@ -131,6 +138,11 @@ ThemeData darkTheme = ThemeData(
           fontSize: 12.0,
           fontWeight: FontWeight.bold,
           color: Colors.white
+      ),
+      headline1: TextStyle(
+          fontSize: 12.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.black54
       ),
 
     ),

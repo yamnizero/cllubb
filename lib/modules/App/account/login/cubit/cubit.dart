@@ -1,9 +1,11 @@
 
+
 import 'package:cllubb/model/login/login_model.dart';
 import 'package:cllubb/modules/App/account/login/cubit/states.dart';
 import 'package:cllubb/shared/remote/dio_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 
 
 class ClubLoginCubit extends Cubit<ClubLoginStates>
@@ -13,19 +15,26 @@ class ClubLoginCubit extends Cubit<ClubLoginStates>
   static ClubLoginCubit get(context) => BlocProvider.of(context);
   late ClubLoginModel loginModel;
 
+
+
+
+
+
+
+
   void userLogin({
-  required String email,
-  required String password,
-}) {
+    required String email,
+    required String password,
+  }) {
 
     emit(ClubLoginLoadingState());
 
     DioHelper.postData(
-        url: 'logIn.php',
-        data: {
-          'mLmail':email,
-          'mLpassword':password,
-        },
+      url: 'logIn.php',
+      data: {
+        'mLmail':email,
+        'mLpassword':password,
+      },
     ).then((value) {
       print(value.data);
       loginModel = ClubLoginModel.fromJson(value.data);

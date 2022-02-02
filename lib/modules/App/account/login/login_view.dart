@@ -167,7 +167,7 @@ class LoginView extends StatelessWidget {
                             },
                             width: double.infinity,
                           ),
-                          fallback: (context) => const Center(child: CircularProgressIndicator(),),
+                          fallback: (context) => const Center(child: CircularProgressIndicator(color:kClub,),),
                         ),
                         SizedBox(
                           height: MediaQuery.of(context).size.height * .02,
