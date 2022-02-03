@@ -31,11 +31,12 @@ Widget defaultButton({
 
 Widget dropButton({
   required Function()? function,
-  required String? text,
+  required String text,
 }) => ElevatedButton(
         child: Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Text(text!),
+            Text(text),
             Icon(MaterialIcons.arrow_drop_down),
           ],
         ),

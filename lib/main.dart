@@ -43,7 +43,7 @@ void main() async {
 
           MyApp(
             startWidget: widget,
-            isDark: isDark!,
+            isDark: isDark,
       )
       );
     },

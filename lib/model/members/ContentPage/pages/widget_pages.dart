@@ -6,6 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
+import 'connection/page_connections.dart';
+import 'groups/page_groups.dart';
+
 class SettingContentModel{
   String? title;
   IconData? icon;
@@ -66,7 +69,13 @@ class WidgetPages extends StatelessWidget {
                 leadingIcon: (AntDesign.adduser),
                 title: 'Connection',
                 num: 4,
-                onTap: (){},
+                onTap: ()
+                {
+                  Get.to(()=> const PageConnections(),
+                      duration: const Duration(milliseconds: 500),
+                      transition: Transition.rightToLeftWithFade
+                  );
+                },
 
               ),
               Divider(
@@ -76,7 +85,12 @@ class WidgetPages extends StatelessWidget {
                 leadingIcon: (AntDesign.addusergroup),
                 title: 'Groups',
                 num: 0,
-                onTap: (){},
+                onTap: (){
+                  Get.to(()=> const PageGroups(),
+                      duration: const Duration(milliseconds: 500),
+                      transition: Transition.rightToLeftWithFade
+                  );
+                },
 
               ),
               Divider(
