@@ -23,10 +23,10 @@ Widget buttonOrganizer(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Icon(MaterialIcons.check),
+            Icon(MaterialIcons.check,color: Colors.black,),
             Text(
               text!,
-              style: Theme.of(context).textTheme.bodyText1,
+              style: TextStyle(color: Colors.black,fontSize: 14),
             ),
           ],
         ),
@@ -172,6 +172,7 @@ void showAlertDialogGroups(context)
                 onPressed: () => Navigator.of(context).pop(),
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.grey,
+                  side: BorderSide(color: Colors.black, width: 1),
                 ),
                 child:  Text('Ok',style: Theme.of(context).textTheme.bodyText2,)
             )

@@ -1,3 +1,4 @@
+import 'package:cllubb/model/members/ContentPage/pages/groups/details_page_groups/details_page_groups.dart';
 import 'package:cllubb/shared/colors/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,10 +12,10 @@ class WidgetItemGroup extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Get.to(()=> const PageGroups(),
-        //     duration: const Duration(milliseconds: 500),
-        //     transition: Transition.rightToLeftWithFade
-        // );
+        Get.to(()=> const DetailsPageGroups(),
+            duration: const Duration(milliseconds: 500),
+            transition: Transition.rightToLeftWithFade
+        );
       },
       child: Column(
         children: [

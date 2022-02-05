@@ -61,7 +61,7 @@ class _WidgetButtonsContentState extends State<WidgetButtonsContent> {
             children: [
               CircleAvatar(
                   radius: 22,
-                  backgroundColor: Theme.of(context).backgroundColor,
+                  backgroundColor: Theme.of(context).backgroundColor.withOpacity(0.4),
                   child: Icon(
                     AntDesign.upcircleo,
                     color: Colors.black.withOpacity(0.6),
@@ -104,7 +104,7 @@ class _WidgetButtonsContentState extends State<WidgetButtonsContent> {
             children: [
               CircleAvatar(
                   radius: 22,
-              backgroundColor: Theme.of(context).backgroundColor,
+                  backgroundColor: Theme.of(context).backgroundColor.withOpacity(0.4),
 
                   child: Icon(
                     AntDesign.message1,
@@ -127,7 +127,7 @@ class _WidgetButtonsContentState extends State<WidgetButtonsContent> {
             children: [
               CircleAvatar(
                   radius: 22,
-              backgroundColor: Theme.of(context).backgroundColor,
+                  backgroundColor: Theme.of(context).backgroundColor.withOpacity(0.4),
 
                   child: Icon(
                     AntDesign.eye,
