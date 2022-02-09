@@ -44,6 +44,7 @@ dependencies:
   get:
   font_awesome_flutter: ^9.2.0
   flutter_vector_icons:
+  image_picker: ^0.8.4+7
 
 
   # The following adds the Cupertino Icons font to your application.

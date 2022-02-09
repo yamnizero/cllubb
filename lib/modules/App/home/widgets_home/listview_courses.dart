@@ -8,7 +8,7 @@ class ListViewCourses extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Container(
+      child: SizedBox(
         height: 165,
         child: ListView.separated(
           scrollDirection: Axis.horizontal,

@@ -11,78 +11,66 @@ import 'layout/shop_layout/home_layout.dart';
 import 'modules/App/account/login/login_view.dart';
 import 'modules/onBoarding/on_boarding_view.dart';
 
-
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   DioHelper.init();
   await CacheHelper.init();
-
   Widget widget;
   bool? isDark = CacheHelper.getData(key: 'isDark');
   bool? onBoarding = CacheHelper.getData(key: 'onBoarding');
   String? token = CacheHelper.getData(key: 'token');
   print("here=>>>>>>>>>$token");
 
-  if(onBoarding != null)
-  {
-    if( token != null) {
-      widget =  const  HomeLayout();
+  if (onBoarding != null) {
+    if (token != null) {
+      widget = const HomeLayout();
     } else {
-      widget =  const LoginView();
+      widget = const LoginView();
     }
-  } else
-  {
+  } else {
     widget = const OnBoardScreen();
   }
 
   BlocOverrides.runZoned(
-        () {
-      runApp(
-
-          MyApp(
-            startWidget: widget,
-            isDark: isDark,
-      )
-      );
+    () {
+      runApp(MyApp(
+        startWidget: widget,
+        isDark: isDark,
+      ));
     },
     blocObserver: MyBlocObserver(),
   );
 }
 
-
-
 class MyApp extends StatelessWidget {
   final bool? isDark;
   final Widget startWidget;
-  MyApp({Key? key,required this.startWidget,
-    this.isDark
-  }) : super(key: key);
+
+  MyApp({Key? key, required this.startWidget, this.isDark}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
     return BlocProvider(
       create: (BuildContext context) => CllubbCubit()
         ..changeAppMode(
-         modeDark: isDark,
+          modeDark: isDark,
         ),
-
-      child: BlocConsumer<CllubbCubit,CllubbStates> (
-        listener: (context,state){},
-        builder: (context,state){
-          return  GetMaterialApp(
+      child: BlocConsumer<CllubbCubit, CllubbStates>(
+        listener: (context, state) {},
+        builder: (context, state) {
+          return GetMaterialApp(
             debugShowCheckedModeBanner: false,
-            theme:lightTheme,
-           darkTheme: darkTheme,
-            themeMode: CllubbCubit.get(context).isDark ? ThemeMode.dark : ThemeMode.light,
-            home:HomeLayout(),
+            theme: lightTheme,
+            darkTheme: darkTheme,
+            themeMode: CllubbCubit.get(context).isDark
+                ? ThemeMode.dark
+                : ThemeMode.light,
+            home: HomeLayout(),
           );
-
         },
       ),
     );
   }
- }
+}

@@ -1,5 +1,6 @@
 import 'package:cllubb/model/members/ContentPage/pages/groups/details_page_groups/feed_screen/feed_screen_view.dart';
 import 'package:cllubb/model/members/ContentPage/pages/groups/details_page_groups/members_screen/members_screen_view.dart';
+import 'package:cllubb/model/members/ContentPage/pages/groups/details_page_groups/photos/photo_screen_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:get/get.dart';
@@ -66,10 +67,10 @@ class WidgetItemPageDetails extends StatelessWidget {
                 num: 4,
                 onTap: ()
                 {
-                  // Get.to(()=> const PageConnections(),
-                  //     duration: const Duration(milliseconds: 500),
-                  //     transition: Transition.rightToLeftWithFade
-                  // );
+                  Get.to(()=> const PhotoScreenView(),
+                      duration: const Duration(milliseconds: 500),
+                      transition: Transition.rightToLeftWithFade
+                  );
                 },
 
               ),
