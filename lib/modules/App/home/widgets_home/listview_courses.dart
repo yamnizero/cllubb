@@ -12,8 +12,8 @@ class ListViewCourses extends StatelessWidget {
         height: 165,
         child: ListView.separated(
           scrollDirection: Axis.horizontal,
-          itemBuilder: (context,index) =>const Courses(),
-          separatorBuilder: (context,index) => const SizedBox(width:8,),
+          itemBuilder: (context,index) => const Courses(),
+          separatorBuilder: (context,index) => const SizedBox(width:18,),
           itemCount: 5,
         ),
       ),
